@@ -1,0 +1,35 @@
+button {
+    border: 0.5px solid #000000;
+    background-color: #E0E0E6;
+    font-size: 32px;
+    color: rgb(0, 0, 0);
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+
+button:hover {
+    background-color: #FEFEFF;
+}
+
+button:active {
+    background-color: #A4A4AA;
+}
+
+button.actions {
+    color: rgb(255, 255, 255);
+    background-color: #ED9A3D;
+}
+
+button.actions:hover {
+    background-color: #FFB85B;
+}
+
+button.actions:active {
+    background-color: #C57215;
+}
+
+.btn-key-0 {
+    grid-column: 1/3;
+}

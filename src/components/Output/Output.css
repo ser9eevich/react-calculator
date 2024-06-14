@@ -1,0 +1,16 @@
+.Output {
+    width: 100%;
+    height: 110px;
+    background-color: #1c191c;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: right;
+    background: #1c191c;
+    color: #ffffff;
+    font-size: 48px;
+    user-select: none;
+}
