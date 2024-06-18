@@ -3,7 +3,8 @@ import { useState } from 'react';
 import Wrapper from './components/Wrapper/Wrapper.js';
 import Output from './components/Output/Output.js';
 import ButtonBox from './components/ButtonBox/ButtonBox.js';
-import Button from './components/button/button.js';
+import Button from './components/Button/button.js';
+import Container from './components/Container/Container.js';
 
 const btnValues = [
   ["C", "±", "%", "÷"],
@@ -64,22 +65,29 @@ function App() {
     const math = (a, b, significance) => {
       console.log(significance);
       let result;
-
-      switch(significance) {
-        case "-": 
-          result = a - b;
-          break;
-        case "+": 
-          result = a + b;
-          break;
-        case "×": 
-          result = a * b;
-          break;
-        default:
-          result = a / b;
+      if (b === 0 && significance === "÷"){
+        setCalc({
+          ...calc,
+          prevValue: 0,
+          result: 0,
+          significance: 0,
+        })
+      } else {
+        switch(significance) {
+          case "-": 
+            result = a - b;
+            break;
+          case "+": 
+            result = a + b;
+            break;
+          case "×": 
+            result = a * b;
+            break;
+          default:
+            result = a / b;
+        }
+        return result;
       }
-
-      return result;
     }
     
     setCalc({
@@ -113,7 +121,8 @@ function App() {
   };
 
   return (
-    <Wrapper>
+    <Container>
+      <Wrapper>
       <Output>
         {calc.prevValue ? calc.prevValue : calc.result}
       </Output>
@@ -144,6 +153,8 @@ function App() {
         }
       </ButtonBox>
     </Wrapper>
+    </Container>
+    
   );
 }
 
